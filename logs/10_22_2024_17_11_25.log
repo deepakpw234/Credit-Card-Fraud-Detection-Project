@@ -1,0 +1,5 @@
+[ 2024-10-22 17:11:26,136 ] 25 root - INFO - Data Ingestion is started
+[ 2024-10-22 17:11:26,137 ] 26 root - INFO - Downloading of dataset from github is started
+[ 2024-10-22 17:11:32,316 ] 32 root - INFO - Dataset unzipping is started
+[ 2024-10-22 17:11:32,889 ] 37 root - INFO - Dataset is unzipped
+[ 2024-10-22 17:11:32,889 ] 39 root - INFO - Data Ingestion is completed
