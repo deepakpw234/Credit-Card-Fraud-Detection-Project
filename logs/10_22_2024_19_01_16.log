@@ -1,0 +1,5 @@
+[ 2024-10-22 19:01:17,977 ] 31 root - INFO - Dataset Scaling is started
+[ 2024-10-22 19:01:20,097 ] 35 root - INFO - Unscaled dataset is loaded from creditcard csv
+[ 2024-10-22 19:01:20,130 ] 45 root - INFO - Amount and Time are scaled up
+[ 2024-10-22 19:01:20,165 ] 52 root - INFO - unsacled amount and time is drop
+[ 2024-10-22 19:01:20,191 ] 57 root - INFO - Scaled dataframe is created

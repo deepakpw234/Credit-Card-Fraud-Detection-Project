@@ -11,6 +11,5 @@ if __name__=="__main__":
     data_ingestion = DataIngestion()
     unscaled_dataset_path = data_ingestion.initiate_data_ingestion()
 
-
-    a = Stage1DataTransformation()
-    a.get_scaled_data(unscaled_dataset_path)
+    stage1_data_transformation = Stage1DataTransformation()
+    scaled_df = stage1_data_transformation.get_scaled_data(unscaled_dataset_path)

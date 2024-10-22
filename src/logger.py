@@ -9,7 +9,7 @@ os.makedirs(os.path.join(os.getcwd(),"logs"),exist_ok=True)
 
 log_file_path = os.path.join(os.getcwd(),"logs",filename)
 
-print((filename))
+
 
 
 logging.basicConfig(
