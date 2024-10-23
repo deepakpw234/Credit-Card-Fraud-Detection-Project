@@ -6,4 +6,5 @@ tensorflow
 ipykernel==6.29.5
 matplotlib
 seaborn
+imbalanced-learn
 # -e .

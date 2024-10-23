@@ -136,24 +136,30 @@ class Stage1ModelTraining:
             we will selecting Logistic regression for futher model fitting
             '''
 
+            print("Result for undersample X_train")
             undersample_y_pred = log_reg.predict(X_train)
             print(f"Accuracy: {accuracy_score(y_train,undersample_y_pred)}")
             print(f"Confusion matrix: \n{confusion_matrix(y_train,undersample_y_pred)}")
             print(f"classification report: \n{classification_report(y_train,undersample_y_pred)}")
+            print("="*60)
 
 
+            print("Result for undersample X_test")
             undersample_y_pred = log_reg.predict(X_test)
             print(f"Accuracy: {accuracy_score(y_test,undersample_y_pred)}")
             print(f"Confusion matrix: \n{confusion_matrix(y_test,undersample_y_pred)}")
             print(f"Classification report: \n{classification_report(y_test,undersample_y_pred)}")
+            print("="*60)
 
 
-            testing = log_reg.predict(test_x)
+            print("Result for undersample 40000 sample")
+            testing = log_reg.predict(test_x.values)
             print(len(testing))
             print(f"Accuracy: {accuracy_score(test_y,testing)}")
             print(f"Confusion matrix: \n{confusion_matrix(test_y,testing)}")
             print(f"Classification report: \n{classification_report(test_y,testing)}")
-        
+            print("="*60)
+
 
         except Exception as e:
             raise CustomException(e,sys)

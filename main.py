@@ -3,8 +3,8 @@ from src.components.stage_01_data_transformation import Stage1DataTransformation
 from src.components.stage_02_data_transformation import Stage2DataTransformation
 from src.components.model_training_01 import Stage1ModelTraining
 
-
-
+from src.components.stage_03_data_transformation import Stage3DataTransformation
+from src.components.model_training_02 import Stage2ModelTraining
 
 
 
@@ -24,3 +24,12 @@ if __name__=="__main__":
 
     stage1_model_training = Stage1ModelTraining()
     stage1_model_training.model_selection(undersample_df_after_outlier_removal, test_x, test_y)
+
+
+    stage3_data_transformation = Stage3DataTransformation()
+    oversample_df = stage3_data_transformation.oversample_splitting(scaled_df)
+    oversample_df_after_outlier_removal = stage3_data_transformation.oversample_outlier_removal(oversample_df)
+
+
+    stage2_model_training = Stage2ModelTraining()
+    stage2_model_training.model_selection_and_training(oversample_df_after_outlier_removal)
