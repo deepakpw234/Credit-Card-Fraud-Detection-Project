@@ -1,0 +1,10 @@
+[ 2024-10-23 10:23:43,347 ] 25 root - INFO - Data Ingestion is started
+[ 2024-10-23 10:23:43,347 ] 26 root - INFO - Downloading of dataset from github is started
+[ 2024-10-23 10:23:53,635 ] 32 root - INFO - Dataset unzipping is started
+[ 2024-10-23 10:23:54,181 ] 37 root - INFO - Dataset is unzipped
+[ 2024-10-23 10:23:54,181 ] 39 root - INFO - Data Ingestion is completed
+[ 2024-10-23 10:23:54,181 ] 31 root - INFO - Dataset Scaling is started
+[ 2024-10-23 10:23:55,387 ] 35 root - INFO - Unscaled dataset is loaded from creditcard.csv
+[ 2024-10-23 10:23:55,423 ] 45 root - INFO - Amount and Time are scaled up
+[ 2024-10-23 10:23:55,450 ] 52 root - INFO - unsacled amount and time is drop
+[ 2024-10-23 10:23:55,470 ] 57 root - INFO - Scaled dataframe is created

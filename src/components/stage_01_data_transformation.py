@@ -33,7 +33,7 @@ class Stage1DataTransformation:
             unscaled_df = pd.read_csv(unscaled_dataset_path)
             # print(unscaled_df)
             logging.info("Unscaled dataset is loaded from creditcard.csv")
-
+            
             robust = RobustScaler()
             Amout_df = unscaled_df[["Amount"]]
             Time_df = unscaled_df[["Time"]]
@@ -53,7 +53,7 @@ class Stage1DataTransformation:
 
 
             scaled_df = pd.concat((Amout_df_scaled,Time_df_scaled,unscaled_df),axis=1)
-
+            
             logging.info("Scaled dataframe is created")
 
 
