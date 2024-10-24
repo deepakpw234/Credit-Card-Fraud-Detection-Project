@@ -48,6 +48,8 @@ class Stage2ModelTraining:
             log_reg_random.fit(Xsm_train,ysm_train)
             log_reg = log_reg_random.best_estimator_
 
+            print(log_reg)
+
 
             # Checking for ROC AUC Score
             log_reg_random_cross_validation_predict = cross_val_predict(log_reg,Xsm_train,ysm_train,cv=5,method="decision_function")
