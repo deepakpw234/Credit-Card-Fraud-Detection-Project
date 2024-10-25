@@ -15,6 +15,8 @@ from src.components.model_training_01 import Stage1ModelTraining
 from src.components.stage_03_data_transformation import Stage3DataTransformation
 from src.components.model_training_02 import Stage2ModelTraining
 
+from src.components.neural_network_01 import Stage1NeuralNetwork
+from src.components.neural_network_02 import Stage2NeuralNetwork
 
 
 if __name__=="__main__":
@@ -50,3 +52,12 @@ if __name__=="__main__":
 
     accuracy_report = pd.DataFrame(accuracy_dic)
     print(accuracy_report)
+
+
+    # Neural Network
+    stage1_neural_network = Stage1NeuralNetwork()
+    stage1_neural_network.undersample_neural_network_training(undersample_df_after_outlier_removal,scaled_df)
+
+
+    stage2_neural_network = Stage2NeuralNetwork()
+    stage2_neural_network.oversample_neural_network_training(oversample_df_after_outlier_removal,scaled_df)

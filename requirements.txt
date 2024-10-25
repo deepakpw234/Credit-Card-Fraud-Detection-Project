@@ -1,7 +1,7 @@
 pandas
 numpy
 scikit-learn
-keras
+keras == 3.5.0
 tensorflow
 ipykernel==6.29.5
 matplotlib
