@@ -1,3 +1,12 @@
+import os
+import sys
+import pandas as pd
+import numpy as np
+
+from src.exception import CustomException
+from src.logger import logging
+
+
 from src.components.data_ingestion import DataIngestion
 from src.components.stage_01_data_transformation import Stage1DataTransformation
 from src.components.stage_02_data_transformation import Stage2DataTransformation
@@ -23,7 +32,7 @@ if __name__=="__main__":
 
 
     stage1_model_training = Stage1ModelTraining()
-    stage1_model_training.model_selection(undersample_df_after_outlier_removal, test_x, test_y)
+    undersample_accuracy = stage1_model_training.model_selection(undersample_df_after_outlier_removal, test_x, test_y)
 
 
     stage3_data_transformation = Stage3DataTransformation()
@@ -32,4 +41,12 @@ if __name__=="__main__":
 
 
     stage2_model_training = Stage2ModelTraining()
-    stage2_model_training.model_selection_and_training(oversample_df_after_outlier_removal)
+    oversample_accuracy = stage2_model_training.model_selection_and_training(oversample_df_after_outlier_removal)
+
+    accuracy_dic = {
+        "Techinque":["Random undersampling","Oversampling (SMOTE)"],
+        "Score": [undersample_accuracy, oversample_accuracy]
+    }
+
+    accuracy_report = pd.DataFrame(accuracy_dic)
+    print(accuracy_report)

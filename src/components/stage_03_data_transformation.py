@@ -132,7 +132,7 @@ class Stage3DataTransformation:
             smote_df = smote_df.drop((smote_df[((smote_df['V10']<v10_min) | (smote_df['V10']>v10_max)) & (smote_df['Class']==1)]).index,axis=0)
 
 
-            print(smote_df)
+            # print(smote_df)
 
         except Exception as e:
             raise CustomException(e,sys)

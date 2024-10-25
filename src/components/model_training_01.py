@@ -34,8 +34,8 @@ class Stage1ModelTraining:
             y = undersample_df_outlier_removed["Class"]
 
             X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=42)
-            print(X_train)
-            print(y_test)
+            # print(X_train)
+            # print(y_test)
 
 
             # Converting into Array
@@ -133,7 +133,7 @@ class Stage1ModelTraining:
 
             '''
             From the above two checking points (Accuracy score and ROC AUC score) 
-            we will selecting Logistic regression for futher model fitting
+            we are selecting Logistic regression for futher model fitting
             '''
 
             print("Result for undersample X_train")
@@ -146,7 +146,8 @@ class Stage1ModelTraining:
 
             print("Result for undersample X_test")
             undersample_y_pred = log_reg.predict(X_test)
-            print(f"Accuracy: {accuracy_score(y_test,undersample_y_pred)}")
+            undersample_accuracy = accuracy_score(y_test,undersample_y_pred)
+            print(f"Accuracy: {undersample_accuracy}")
             print(f"Confusion matrix: \n{confusion_matrix(y_test,undersample_y_pred)}")
             print(f"Classification report: \n{classification_report(y_test,undersample_y_pred)}")
             print("="*60)
@@ -163,3 +164,5 @@ class Stage1ModelTraining:
 
         except Exception as e:
             raise CustomException(e,sys)
+        
+        return undersample_accuracy
