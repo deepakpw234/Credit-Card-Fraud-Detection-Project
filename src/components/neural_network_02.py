@@ -16,6 +16,7 @@ from keras.optimizers import Adam
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix,classification_report
 
+from src.utils import save_object
 
 
 @dataclass
@@ -29,7 +30,7 @@ class Stage2NeuralNetworkConfig:
 
 class Stage2NeuralNetwork:
     def __init__(self):
-        stage2_neural_network_config = Stage2NeuralNetworkConfig()
+        self.stage2_neural_network_config = Stage2NeuralNetworkConfig()
 
 
     def oversample_neural_network_training(self,oversample_df_after_outlier_removal,scaled_df):
@@ -63,11 +64,14 @@ class Stage2NeuralNetwork:
 
             logging.info("Confusion matrix and classification report calculated for undersample neural network")
 
+
+            save_object(self.stage2_neural_network_config.model_path,oversample_model)
+
             oversample_y_pred = oversample_model.predict(X_test,batch_size=500)
             oversample_y_pred = np.where(oversample_y_pred > 0.5, 1,0)
 
-            print(f"Neural Network confusion matrix for oversample: \n{confusion_matrix(y_test,oversample_y_pred)}")
-            print(f"Neural Network classification report for oversample: \n{classification_report(y_test,oversample_y_pred)}")
+            print(f"Neural Network confusion matrix for oversample with resample dataset: \n{confusion_matrix(y_test,oversample_y_pred)}")
+            print(f"Neural Network classification report for oversample with resample dataset: \n{classification_report(y_test,oversample_y_pred)}")
             print("="*60)
 
 
@@ -83,8 +87,8 @@ class Stage2NeuralNetwork:
             logging.info("Confusion matrix and classification report calculated for actual sample neural network")
 
 
-            print(f"Neural Network confusion matrix for original sample: \n{confusion_matrix(original_y,original_y_pred)}")
-            print(f"Neural Network classification report for original sample: \n{classification_report(original_y,original_y_pred)}")
+            print(f"Neural Network confusion matrix for SMOTE sample with original datset: \n{confusion_matrix(original_y,original_y_pred)}")
+            print(f"Neural Network classification report for SMOTE sample with original datset: \n{classification_report(original_y,original_y_pred)}")
             print("="*60)
 
 

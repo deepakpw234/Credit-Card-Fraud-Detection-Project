@@ -62,8 +62,8 @@ class Stage1NeuralNetwork:
             logging.info("Confusion matrix and classification report calculated for undersample neural network")
             undersample_pred = undersample_model.predict(X_test,batch_size=20)
             undersample_pred = np.where(undersample_pred > 0.5, 1,0)
-            print(f"Neural Network confusion matrix for undersample: \n{confusion_matrix(y_test,undersample_pred)}")
-            print(f"Neural Network classification report for undersample: \n{classification_report(y_test,undersample_pred)}")
+            print(f"Neural Network confusion matrix for undersample with undersample dataset: \n{confusion_matrix(y_test,undersample_pred)}")
+            print(f"Neural Network classification report for undersample with undersample dataset: \n{classification_report(y_test,undersample_pred)}")
             print("="*60)
 
 
@@ -78,8 +78,8 @@ class Stage1NeuralNetwork:
             original_y_pred = np.where(original_y_pred > 0.5, 1,0)
             logging.info("Confusion matrix and classification report calculated for actual sample neural network")
 
-            print(f"Neural Network confusion matrix for original sample: \n{confusion_matrix(original_y,original_y_pred)}")
-            print(f"Neural Network classification report for original sample: \n{classification_report(original_y,original_y_pred)}")
+            print(f"Neural Network confusion matrix for Under sample with original datset: \n{confusion_matrix(original_y,original_y_pred)}")
+            print(f"Neural Network classification report for Under sample with original datset: \n{classification_report(original_y,original_y_pred)}")
             print("="*60)
 
             logging.info("Stage 1 neural network training is completed")
