@@ -28,14 +28,14 @@ class Stage1ModelTraining:
     def __init__(self):
         self.stage1_model_training = Stage1ModelTrainingConfig()
 
-    def model_selection(self,undersample_df_outlier_removed, test_x, test_y):
+    def model_selection(self,undersample_df_outlier_removed):
         try:
+            logging.info("Model selection and training is started")
             X = undersample_df_outlier_removed.drop("Class",axis=1)
             y = undersample_df_outlier_removed["Class"]
 
             X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=42)
-            # print(X_train)
-            # print(y_test)
+            logging.info("Train test split is completed for undersample data")
 
 
             # Converting into Array
@@ -58,6 +58,7 @@ class Stage1ModelTraining:
                 model = list(models.values())[i]
                 training_score = cross_val_score(model,X_train,y_train,cv=5)
                 print(f"Classifier: {list(models.keys())[i]} has the cross validation score of {round(training_score.mean()*100,2)}%")
+            logging.info("Cross validation is checked")
 
             '''
             Classifier: Logistic Regression has the cross validation score of 94.15%
@@ -66,6 +67,7 @@ class Stage1ModelTraining:
             Classifier: DecisionTree Classifier has the cross validation score of 88.8%
             '''
 
+            logging.info("Undersample data hypertunning started")
             # Hyperparameter tunning for all the classifier
             # Finding the Best parameter
             log_params ={
@@ -106,10 +108,7 @@ class Stage1ModelTraining:
             tree_grid.fit(X_train,y_train)
             tree_clf = tree_grid.best_estimator_
 
-            # print(log_reg)
-            # print(knear_clf)
-            # print(svm_clf)
-            # print(tree_clf)
+            logging.info("Best parameters for every model is calculated")
 
             # Checking for ROC AUC Score
             log_reg_cross_validation_predict = cross_val_predict(log_reg,X_train,y_train,cv=5,method="decision_function")
@@ -117,11 +116,11 @@ class Stage1ModelTraining:
             svm_validation_predict = cross_val_predict(svm_clf,X_train,y_train,cv=5,method="decision_function")
             tree_validation_predict = cross_val_predict(tree_clf,X_train,y_train,cv=5)
 
-            print(f"Logistic Regression ROC AUC score is: {roc_auc_score(y_train,log_reg_cross_validation_predict)}")
-            print(f"Knear ROC AUC score is: {roc_auc_score(y_train,knear_validation_predict)}")
-            print(f"SVM ROC AUC score is: {roc_auc_score(y_train,svm_validation_predict)}")
-            print(f"Decision Tree ROC AUC score is: {roc_auc_score(y_train,tree_validation_predict)}")
-
+            # print(f"Logistic Regression ROC AUC score is: {roc_auc_score(y_train,log_reg_cross_validation_predict)}")
+            # print(f"Knear ROC AUC score is: {roc_auc_score(y_train,knear_validation_predict)}")
+            # print(f"SVM ROC AUC score is: {roc_auc_score(y_train,svm_validation_predict)}")
+            # print(f"Decision Tree ROC AUC score is: {roc_auc_score(y_train,tree_validation_predict)}")
+            logging.info("ROC AUC score is calcualted for every model")
 
             '''
             Logistic Regression ROC AUC score is: 0.972593149540518
@@ -136,6 +135,7 @@ class Stage1ModelTraining:
             we are selecting Logistic regression for futher model fitting
             '''
 
+            logging.info("Checking for accuracy score for undersample on training data")
             print("Result for undersample X_train")
             undersample_y_pred = log_reg.predict(X_train)
             print(f"Accuracy: {accuracy_score(y_train,undersample_y_pred)}")
@@ -143,7 +143,7 @@ class Stage1ModelTraining:
             print(f"classification report: \n{classification_report(y_train,undersample_y_pred)}")
             print("="*60)
 
-
+            logging.info("Checking for accuracy score for undersample on test data")
             print("Result for undersample X_test")
             undersample_y_pred = log_reg.predict(X_test)
             undersample_accuracy = accuracy_score(y_test,undersample_y_pred)
@@ -152,15 +152,7 @@ class Stage1ModelTraining:
             print(f"Classification report: \n{classification_report(y_test,undersample_y_pred)}")
             print("="*60)
 
-
-            print("Result for undersample 40000 sample")
-            testing = log_reg.predict(test_x.values)
-            print(len(testing))
-            print(f"Accuracy: {accuracy_score(test_y,testing)}")
-            print(f"Confusion matrix: \n{confusion_matrix(test_y,testing)}")
-            print(f"Classification report: \n{classification_report(test_y,testing)}")
-            print("="*60)
-
+            logging.info("Model training for undersample is completed")
 
         except Exception as e:
             raise CustomException(e,sys)

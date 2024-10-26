@@ -32,13 +32,12 @@ class Stage1NeuralNetwork:
 
     def undersample_neural_network_training(self,undersample_df_outlier_removed,scaled_df):
         try:
+            logging.info("Stage 1 Neural network training is started")
             X = undersample_df_outlier_removed.drop("Class",axis=1)
             y = undersample_df_outlier_removed["Class"]
 
             X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=42)
-            # print(X_train)
-            # print(y_test)
-
+            logging.info("train test split done")
 
             # Converting into Array
             X_train = X_train.values
@@ -46,8 +45,8 @@ class Stage1NeuralNetwork:
             y_train = y_train.values
             y_test = y_test.values
 
-
-            # Making neural network
+            logging.info("Neural network layering is started")
+            # Training neural network for undersample
             input_neurons = X_train.shape[1]
             undersample_model = Sequential([Dense(input_neurons,input_dim = input_neurons,activation="relu"),
                                 Dense(32,activation = "relu"),
@@ -58,7 +57,9 @@ class Stage1NeuralNetwork:
             
 
             undersample_model.fit(X_train,y_train,batch_size=20,epochs=20,shuffle=True,verbose=0)
+            logging.info("Neural network training is completed")
 
+            logging.info("Confusion matrix and classification report calculated for undersample neural network")
             undersample_pred = undersample_model.predict(X_test,batch_size=20)
             undersample_pred = np.where(undersample_pred > 0.5, 1,0)
             print(f"Neural Network confusion matrix for undersample: \n{confusion_matrix(y_test,undersample_pred)}")
@@ -73,15 +74,15 @@ class Stage1NeuralNetwork:
             original_X = original_X.values
             original_y = original_y.values
 
-            original_y_pred = undersample_model.predict(original_X,batch_size=300,verbose=2)
+            original_y_pred = undersample_model.predict(original_X,batch_size=300,verbose=0)
             original_y_pred = np.where(original_y_pred > 0.5, 1,0)
+            logging.info("Confusion matrix and classification report calculated for actual sample neural network")
 
             print(f"Neural Network confusion matrix for original sample: \n{confusion_matrix(original_y,original_y_pred)}")
             print(f"Neural Network classification report for original sample: \n{classification_report(original_y,original_y_pred)}")
             print("="*60)
 
-
-
+            logging.info("Stage 1 neural network training is completed")
 
         except Exception as e:
             raise CustomException(e,sys)

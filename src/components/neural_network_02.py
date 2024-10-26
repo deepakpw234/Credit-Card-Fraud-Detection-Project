@@ -34,13 +34,12 @@ class Stage2NeuralNetwork:
 
     def oversample_neural_network_training(self,oversample_df_after_outlier_removal,scaled_df):
         try:
+            logging.info("Stage 2 Neural network training is started")
             X = oversample_df_after_outlier_removal.drop("Class",axis=1)
             y = oversample_df_after_outlier_removal["Class"]
 
             X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=42)
-            # print(X_train)
-            # print(y_test)
-
+            logging.info("train test split done")
 
             # Converting into Array
             X_train = X_train.values
@@ -48,7 +47,9 @@ class Stage2NeuralNetwork:
             y_train = y_train.values
             y_test = y_test.values
 
-            # Making neural network for oversample 
+
+            logging.info("Neural network layering is started")
+            # Training neural network for oversample 
             input_neuron = X_train.shape[1]
             oversample_model = Sequential([Dense(input_neuron,input_dim = input_neuron, activation="relu"),
                                            Dense(32,activation="relu"),
@@ -57,7 +58,10 @@ class Stage2NeuralNetwork:
             
             oversample_model.compile(optimizer=Adam(learning_rate=0.001),loss="binary_crossentropy",metrics=["accuracy"])
 
-            oversample_model.fit(X_train,y_train,batch_size=500,epochs=50,verbose=2,shuffle=True)
+            oversample_model.fit(X_train,y_train,batch_size=500,epochs=50,verbose=0,shuffle=True)
+            logging.info("Neural network training is completed")
+
+            logging.info("Confusion matrix and classification report calculated for undersample neural network")
 
             oversample_y_pred = oversample_model.predict(X_test,batch_size=500)
             oversample_y_pred = np.where(oversample_y_pred > 0.5, 1,0)
@@ -74,13 +78,34 @@ class Stage2NeuralNetwork:
             original_X = original_X.values
             original_y = original_y.values
 
-            original_y_pred = oversample_model.predict(original_X,batch_size=500,verbose=2)
+            original_y_pred = oversample_model.predict(original_X,batch_size=500,verbose=0)
             original_y_pred = np.where(original_y_pred > 0.5, 1,0)
+            logging.info("Confusion matrix and classification report calculated for actual sample neural network")
+
 
             print(f"Neural Network confusion matrix for original sample: \n{confusion_matrix(original_y,original_y_pred)}")
             print(f"Neural Network classification report for original sample: \n{classification_report(original_y,original_y_pred)}")
             print("="*60)
 
+
+            '''
+            ============================================================
+            Neural Network confusion matrix for original sample: 
+            [[284290     25]
+            [     3    489]]
+            Neural Network classification report for original sample: 
+                        precision    recall  f1-score   support
+
+                    0       1.00      1.00      1.00    284315
+                    1       0.95      0.99      0.97       492
+
+                accuracy                           1.00    284807
+            macro avg       0.98      1.00      0.99    284807
+            weighted avg       1.00      1.00      1.00    284807
+
+            ============================================================
+            '''
+            logging.info("Stage 2 neural network training is completed")
 
 
         except Exception as e:

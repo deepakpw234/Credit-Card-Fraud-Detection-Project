@@ -26,6 +26,7 @@ class Stage2ModelTraining:
 
     def model_selection_and_training(self, smote_df):
         try:
+            logging.info("Model selection and training is started for oversample")
             oversample_df = smote_df
 
             Xsm = oversample_df.drop("Class",axis=1)
@@ -33,14 +34,13 @@ class Stage2ModelTraining:
 
 
             Xsm_train, Xsm_test, ysm_train, ysm_test = train_test_split(Xsm, ysm, test_size=0.2,random_state=42)
+            logging.info("Train test split is completed for undersample data")
 
-        
 
             Xsm_train = Xsm_train.values
             Xsm_test = Xsm_test.values
             ysm_train = ysm_train.values
             ysm_test = ysm_test.values
-
 
 
             log_params ={
@@ -51,15 +51,15 @@ class Stage2ModelTraining:
             log_reg_random.fit(Xsm_train,ysm_train)
             log_reg = log_reg_random.best_estimator_
 
-            print(log_reg)
+            logging.info("Best parameters for model is calculated on oversample data")
 
 
             # Checking for ROC AUC Score
             log_reg_random_cross_validation_predict = cross_val_predict(log_reg,Xsm_train,ysm_train,cv=5,method="decision_function")
 
-            print(f"Logistic Regression ROC AUC score is: {roc_auc_score(ysm_train,log_reg_random_cross_validation_predict)}")
+            # print(f"Logistic Regression ROC AUC score is: {roc_auc_score(ysm_train,log_reg_random_cross_validation_predict)}")
 
-
+            logging.info("Checking for accuracy score, confusion matrix and classification report for oversample on training data")
             print("="*60)
             print("Result for oversample Xsm_train")
             oversample_y_pred = log_reg.predict(Xsm_train)
@@ -68,7 +68,7 @@ class Stage2ModelTraining:
             print(f"classification report: \n{classification_report(ysm_train,oversample_y_pred)}")
             print("="*60)
 
-
+            logging.info("Checking for accuracy score, confusion matrix and classification report for oversample on test data")
             print("Result for oversample Xsm_test")
             oversample_y_pred = log_reg.predict(Xsm_test)
             oversample_accuracy = accuracy_score(ysm_test,oversample_y_pred)
