@@ -1,0 +1,28 @@
+[ 2024-10-28 22:12:24,177 ] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[ 2024-10-28 22:12:24,177 ] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-10-28 22:12:24,179 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-10-28 22:12:24,505 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-10-28 22:12:24,510 ] 97 werkzeug - INFO -  * Debugger PIN: 403-725-502
+[ 2024-10-28 22:12:27,678 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:27] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+[ 2024-10-28 22:12:27,739 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:27] "[36mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:27,771 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:27] "[36mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:27,788 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:27] "GET /home?__debugger__=yes&cmd=resource&f=console.png&s=gz1iiCqtKQq8LoXZeOaM HTTP/1.1" 200 -
+[ 2024-10-28 22:12:27,799 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:27] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:28,906 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:28] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+[ 2024-10-28 22:12:28,917 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:28] "[36mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:28,918 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:28] "[36mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:28,931 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:28] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png&s=gz1iiCqtKQq8LoXZeOaM HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:28,940 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:28] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:29,911 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:29] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+[ 2024-10-28 22:12:29,922 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:29] "[36mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:29,925 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:29] "[36mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:29,937 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:29] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png&s=gz1iiCqtKQq8LoXZeOaM HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:29,947 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:29] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:32,442 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:32] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+[ 2024-10-28 22:12:32,451 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:32] "[36mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:32,452 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:32] "[36mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:32,466 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:32] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png&s=gz1iiCqtKQq8LoXZeOaM HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:12:32,478 ] 97 werkzeug - INFO - 127.0.0.1 - - [28/Oct/2024 22:12:32] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[ 2024-10-28 22:13:03,100 ] 97 werkzeug - INFO -  * Detected change in 'c:\\users\\deepa\\panda 2024\\credit card fraud project\\credit card fraud detection project\\application.py', reloading
+[ 2024-10-28 22:13:03,137 ] 97 werkzeug - INFO -  * Restarting with stat
