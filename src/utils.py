@@ -16,3 +16,15 @@ def save_object(model_path,obj):
 
     except Exception as e:
         raise CustomException(e,sys)
+    
+
+def load_object(model_path):
+    try:
+        
+        with open(model_path,"rb") as model:
+            return dill.load(model) 
+
+        logging.info("Model is loaded from pikel file")
+
+    except Exception as e:
+        raise CustomException(e,sys)

@@ -1,0 +1,8 @@
+[ 2024-10-29 07:20:18,073 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-10-29 07:20:18,086 ] 97 werkzeug - INFO -  * Debugger PIN: 403-725-502
+[ 2024-10-29 07:20:27,297 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:20:27] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+[ 2024-10-29 07:20:27,357 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:20:27] "[36mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[ 2024-10-29 07:20:27,370 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:20:27] "[36mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[ 2024-10-29 07:20:27,382 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:20:27] "GET /home?__debugger__=yes&cmd=resource&f=console.png&s=01xJx4aZhBmuT1MTG1FB HTTP/1.1" 200 -
+[ 2024-10-29 07:20:27,390 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:20:27] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[ 2024-10-29 07:22:32,024 ] 97 werkzeug - INFO -  * Detected change in 'C:\\Users\\deepa\\Panda 2024\\Credit Card Fraud Project\\Credit Card Fraud Detection Project\\application.py', reloading

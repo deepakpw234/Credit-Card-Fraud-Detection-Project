@@ -1,0 +1,18 @@
+[ 2024-10-29 10:55:41,479 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-10-29 10:55:41,487 ] 97 werkzeug - INFO -  * Debugger PIN: 403-725-502
+[ 2024-10-29 10:55:47,243 ] 28 root - INFO - Requesting to get input from website
+[ 2024-10-29 10:55:47,246 ] 27 root - INFO - Prediction pipleline is started
+[ 2024-10-29 10:55:47,246 ] 47 root - INFO - Random numbers are generated for all required variable
+[ 2024-10-29 10:55:47,247 ] 59 root - INFO - Fraud detection from the required input is started
+[ 2024-10-29 10:55:47,251 ] 64 root - INFO - Loading the model
+[ 2024-10-29 10:55:54,218 ] 69 root - INFO - Predicting the transaction
+[ 2024-10-29 10:55:54,218 ] 36 root - INFO - final predticion completed
+[ 2024-10-29 10:55:54,254 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 10:55:54] "POST /home HTTP/1.1" 200 -
+[ 2024-10-29 10:55:59,118 ] 28 root - INFO - Requesting to get input from website
+[ 2024-10-29 10:55:59,118 ] 27 root - INFO - Prediction pipleline is started
+[ 2024-10-29 10:55:59,119 ] 47 root - INFO - Random numbers are generated for all required variable
+[ 2024-10-29 10:55:59,119 ] 59 root - INFO - Fraud detection from the required input is started
+[ 2024-10-29 10:55:59,120 ] 64 root - INFO - Loading the model
+[ 2024-10-29 10:55:59,281 ] 69 root - INFO - Predicting the transaction
+[ 2024-10-29 10:55:59,281 ] 36 root - INFO - final predticion completed
+[ 2024-10-29 10:55:59,282 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 10:55:59] "POST /home HTTP/1.1" 200 -

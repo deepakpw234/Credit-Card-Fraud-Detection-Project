@@ -1,0 +1,11 @@
+[ 2024-10-29 09:12:13,193 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-10-29 09:12:13,199 ] 97 werkzeug - INFO -  * Debugger PIN: 403-725-502
+[ 2024-10-29 09:12:22,902 ] 28 root - INFO - Requesting to get input from website
+[ 2024-10-29 09:12:22,903 ] 27 root - INFO - Prediction pipleline is started
+[ 2024-10-29 09:12:22,904 ] 47 root - INFO - Random numbers are generated for all required variable
+[ 2024-10-29 09:12:22,904 ] 59 root - INFO - Fraud detection from the required input is started
+[ 2024-10-29 09:12:22,905 ] 64 root - INFO - Loading the model
+[ 2024-10-29 09:12:27,186 ] 69 root - INFO - Predicting the transaction
+[ 2024-10-29 09:12:27,194 ] 36 root - INFO - final predticion
+[ 2024-10-29 09:12:27,203 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 09:12:27] "POST /home HTTP/1.1" 200 -
+[ 2024-10-29 09:13:24,765 ] 97 werkzeug - INFO -  * Detected change in 'c:\\users\\deepa\\panda 2024\\credit card fraud project\\credit card fraud detection project\\application.py', reloading

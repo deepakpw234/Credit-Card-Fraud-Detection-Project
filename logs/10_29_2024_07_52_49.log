@@ -1,0 +1,12 @@
+[ 2024-10-29 07:52:49,748 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-10-29 07:52:49,754 ] 97 werkzeug - INFO -  * Debugger PIN: 403-725-502
+[ 2024-10-29 07:58:09,300 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:58:09] "POST /home HTTP/1.1" 200 -
+[ 2024-10-29 07:58:49,349 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 07:58:49] "POST /home HTTP/1.1" 200 -
+[ 2024-10-29 08:00:53,578 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 08:00:53] "POST /home HTTP/1.1" 200 -
+[ 2024-10-29 08:02:47,928 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 08:02:47] "POST /home HTTP/1.1" 200 -
+[ 2024-10-29 08:03:22,586 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 08:03:22] "POST /home HTTP/1.1" 200 -
+[ 2024-10-29 08:03:54,693 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 08:03:54] "POST /home HTTP/1.1" 200 -
+[ 2024-10-29 08:04:44,515 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 08:04:44] "POST /home HTTP/1.1" 200 -
+[ 2024-10-29 08:05:23,187 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 08:05:23] "GET /home HTTP/1.1" 200 -
+[ 2024-10-29 08:05:49,367 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 08:05:49] "POST /home HTTP/1.1" 200 -
+[ 2024-10-29 08:16:30,584 ] 97 werkzeug - INFO -  * Detected change in 'C:\\Users\\deepa\\Panda 2024\\Credit Card Fraud Project\\Credit Card Fraud Detection Project\\src\\pipelines\\predict_pipeline.py', reloading

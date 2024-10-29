@@ -1,0 +1,4 @@
+[ 2024-10-29 08:58:44,458 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-10-29 08:58:44,464 ] 97 werkzeug - INFO -  * Debugger PIN: 403-725-502
+[ 2024-10-29 08:58:50,529 ] 97 werkzeug - INFO - 127.0.0.1 - - [29/Oct/2024 08:58:50] "POST /home HTTP/1.1" 200 -
+[ 2024-10-29 08:59:09,445 ] 97 werkzeug - INFO -  * Detected change in 'c:\\users\\deepa\\panda 2024\\credit card fraud project\\credit card fraud detection project\\src\\pipelines\\predict_pipeline.py', reloading
