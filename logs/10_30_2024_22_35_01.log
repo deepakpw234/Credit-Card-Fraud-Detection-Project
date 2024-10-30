@@ -1,0 +1,72 @@
+[ 2024-10-30 22:35:12,948 ] 24 root - INFO - Data ingestion is started on main.py file
+[ 2024-10-30 22:35:12,948 ] 25 root - INFO - Data Ingestion is started
+[ 2024-10-30 22:35:12,948 ] 26 root - INFO - Downloading of dataset from github is started
+[ 2024-10-30 22:35:23,632 ] 32 root - INFO - Dataset unzipping is started
+[ 2024-10-30 22:35:24,177 ] 37 root - INFO - Dataset is unzipped
+[ 2024-10-30 22:35:24,177 ] 39 root - INFO - Data Ingestion is completed
+[ 2024-10-30 22:35:24,177 ] 27 root - INFO - Data ingestion is completed on main.py file
+[ 2024-10-30 22:35:24,177 ] 29 root - INFO - Stage 1 data transformation is started on main.py file
+[ 2024-10-30 22:35:24,177 ] 31 root - INFO - Dataset Scaling is started
+[ 2024-10-30 22:35:25,330 ] 35 root - INFO - Unscaled dataset is loaded from creditcard.csv
+[ 2024-10-30 22:35:25,362 ] 45 root - INFO - Amount and Time are scaled up
+[ 2024-10-30 22:35:25,391 ] 52 root - INFO - unsacled amount and time is drop
+[ 2024-10-30 22:35:25,412 ] 57 root - INFO - Scaled dataframe is created
+[ 2024-10-30 22:35:25,419 ] 32 root - INFO - Stage 1 data transformation is completed on main.py file
+[ 2024-10-30 22:35:25,419 ] 35 root - INFO - Stage 2 data transformation is started on main.py file
+[ 2024-10-30 22:35:25,420 ] 26 root - INFO - Splitting of scaled data into input and target columns is started
+[ 2024-10-30 22:35:25,526 ] 36 root - INFO - Undersample scaled data is splitted
+[ 2024-10-30 22:35:25,527 ] 40 root - INFO - undersample data is reshuffled
+[ 2024-10-30 22:35:25,535 ] 50 root - INFO - Removing of outlier from undersample data is started
+[ 2024-10-30 22:35:25,537 ] 57 root - INFO - Removal from V14
+[ 2024-10-30 22:35:25,540 ] 77 root - INFO - Removal from V12
+[ 2024-10-30 22:35:25,541 ] 96 root - INFO - Removal from V10
+[ 2024-10-30 22:35:25,542 ] 113 root - INFO - Outlier removal from undersample data is completed
+[ 2024-10-30 22:35:25,542 ] 39 root - INFO - Stage 2 data transformation is completed on main.py file
+[ 2024-10-30 22:35:25,542 ] 42 root - INFO - Stage 1 model training is started on main.py file
+[ 2024-10-30 22:35:25,542 ] 33 root - INFO - Model selection and training is started
+[ 2024-10-30 22:35:25,544 ] 38 root - INFO - Train test split is completed for undersample data
+[ 2024-10-30 22:35:26,008 ] 61 root - INFO - Cross validation is checked
+[ 2024-10-30 22:35:26,009 ] 70 root - INFO - Undersample data hypertunning started
+[ 2024-10-30 22:35:43,361 ] 111 root - INFO - Best parameters for every model is calculated
+[ 2024-10-30 22:35:43,547 ] 123 root - INFO - ROC AUC score is calcualted for every model
+[ 2024-10-30 22:35:43,547 ] 138 root - INFO - Checking for accuracy score for undersample on training data
+[ 2024-10-30 22:35:43,561 ] 146 root - INFO - Checking for accuracy score for undersample on test data
+[ 2024-10-30 22:35:43,570 ] 155 root - INFO - Model training for undersample is completed
+[ 2024-10-30 22:35:43,571 ] 45 root - INFO - Stage 1 model training is completed on main.py file
+[ 2024-10-30 22:35:43,571 ] 48 root - INFO - Stage 3 data transformation is started on main.py file
+[ 2024-10-30 22:35:43,571 ] 24 root - INFO - Splitting of scaled data into input and target columns for oversample is started
+[ 2024-10-30 22:35:43,661 ] 33 root - INFO - oversample scaled data is splitted
+[ 2024-10-30 22:35:43,661 ] 35 root - INFO - SMOTE resampling is started
+[ 2024-10-30 22:35:44,902 ] 44 root - INFO - New oversample dataframe is created with SMOTE resampling
+[ 2024-10-30 22:35:44,930 ] 56 root - INFO - Removing of outlier from oversample data is started
+[ 2024-10-30 22:35:46,206 ] 63 root - INFO - Removal from V14
+[ 2024-10-30 22:35:46,322 ] 83 root - INFO - Removal from V12
+[ 2024-10-30 22:35:46,464 ] 103 root - INFO - Removal from V10
+[ 2024-10-30 22:35:46,602 ] 121 root - INFO - Outlier removal from SMOTE oversample data is completed
+[ 2024-10-30 22:35:46,603 ] 52 root - INFO - Stage 3 data transformation is completed on main.py file
+[ 2024-10-30 22:35:46,603 ] 55 root - INFO - Stage 2 model training is started on main.py file
+[ 2024-10-30 22:35:46,603 ] 29 root - INFO - Model selection and training is started for oversample
+[ 2024-10-30 22:35:46,829 ] 37 root - INFO - Train test split is completed for undersample data
+[ 2024-10-30 22:36:47,539 ] 54 root - INFO - Best parameters for model is calculated on oversample data
+[ 2024-10-30 22:36:56,782 ] 62 root - INFO - Checking for accuracy score, confusion matrix and classification report for oversample on training data
+[ 2024-10-30 22:36:57,729 ] 71 root - INFO - Checking for accuracy score, confusion matrix and classification report for oversample on test data
+[ 2024-10-30 22:36:57,962 ] 58 root - INFO - Stage 2 model training is completed on main.py file
+[ 2024-10-30 22:36:57,988 ] 71 root - INFO - Stage 1 Neural Network training started
+[ 2024-10-30 22:36:57,989 ] 35 root - INFO - Stage 1 Neural network training is started
+[ 2024-10-30 22:36:57,993 ] 40 root - INFO - train test split done
+[ 2024-10-30 22:36:57,993 ] 48 root - INFO - Neural network layering is started
+[ 2024-10-30 22:37:00,865 ] 60 root - INFO - Neural network training is completed
+[ 2024-10-30 22:37:00,866 ] 62 root - INFO - Confusion matrix and classification report calculated for undersample neural network
+[ 2024-10-30 22:37:02,399 ] 79 root - INFO - Confusion matrix and classification report calculated for actual sample neural network
+[ 2024-10-30 22:37:02,812 ] 85 root - INFO - Stage 1 neural network training is completed
+[ 2024-10-30 22:37:02,817 ] 74 root - INFO - Stage 1 Neural Network training completed
+[ 2024-10-30 22:37:02,817 ] 77 root - INFO - Stage 2 Neural Network training started
+[ 2024-10-30 22:37:02,818 ] 38 root - INFO - Stage 2 Neural network training is started
+[ 2024-10-30 22:37:03,073 ] 43 root - INFO - train test split done
+[ 2024-10-30 22:37:03,074 ] 52 root - INFO - Neural network layering is started
+[ 2024-10-30 22:37:52,414 ] 63 root - INFO - Neural network training is completed
+[ 2024-10-30 22:37:52,414 ] 65 root - INFO - Confusion matrix and classification report calculated for undersample neural network
+[ 2024-10-30 22:37:52,518 ] 15 root - INFO - Model is saved in binary format in pikel file
+[ 2024-10-30 22:37:54,035 ] 87 root - INFO - Confusion matrix and classification report calculated for actual sample neural network
+[ 2024-10-30 22:37:54,389 ] 112 root - INFO - Stage 2 neural network training is completed
+[ 2024-10-30 22:37:54,412 ] 80 root - INFO - Stage 2 Neural Network training completed
